@@ -9,6 +9,6 @@ Author: Mark van der Loo
 Description: hallo
 Version: 3.0-0
 Depends: R (>= 2.13.0)
-URL: https://github.com/markvanderloo/rspa
-Date: 2012-07-15
+URL: https://github.com/markvanderloo/extremevalues
+Date: 2013-01-02
 Suggests: knitr, testthat
