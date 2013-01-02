@@ -42,4 +42,15 @@ parameters <- function(x,  qfun, Flim=c(0,1), ..., optimpar=list()){
    do.call(optim, c(list(par=unlist(list(...)), fn=minfun), optimpar))
 }
 
+limits <- function(qfun, N, rho=c(0.5,0.5), ... ){
+   x <- rho/N
+   c(Lplus=qfun(1-x[2], ...), Lmin=qfun(x[1], ...))
+}
+
+
+
+
+
+
+
 
