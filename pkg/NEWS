@@ -1,0 +1,33 @@
+version 3.0-0
+- BREAKING CHANGE: Complete rewrite of the package.
+- plot positions of duplicates now get mean plot position by default.
+
+version 2.2
+- Fixed minor bug in namespace file (thanks to Duncan Murdoch for pointing that out)
+- Changed dependancy on gWidgets and gWidgetstcltk to "suggest" for faster loading.
+- Changed documentation of returned R2-value (thanks to Charles Lobos for useful discussion and remarks)
+- Changed calculation of variance of residuals for method II (slightly underestimated previously, thanks to Javier Orche Galindo for noting this)
+- Fixed a bug causing extimated parameters in method II/pareto not to be passed to output.
+
+version 2.1
+- Killed a bug in normal distribution / method II
+- Updated references, some typo's in the man pages
+- Added version 0.1 of GUI interface
+- Small stuff in helpfiles
+
+version 2.0
+- getOutliers.r - Changed rho default, added left limit, added some input
+  checks
+- getLognormalLimit.r - added left limit
+- getExponentialLimit.r - added left limit
+- getWeibullLimit.r - added left limit
+- getNormalLimit.r - added left limit
+- getParetoLimit.r - added left limit
+- Added Method II 
+- Renaming main functions
+- Revised and extended plotting capabilities
+- Major overhaul of the help files
+- Fixed a bug in the exponential fit
+- Changed to Makkonen's equation for plot positions
+
+
