@@ -35,7 +35,7 @@ plotpositions <- function(x,duplicates=c('mean','asis')){
       storage.mode(x) <- "double"
       pp <- .Call("R_plotpositions",x[i])
    }
-   pp[i]
+   pp[order(i)]
 }
 
 
