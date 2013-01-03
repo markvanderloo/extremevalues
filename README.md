@@ -9,4 +9,4 @@ package. It used to be developed [here](http://code.google.com/p/extremevalues/)
 The redeveloped package aims to be _faster_ by redeveloping someof the algorithms in C and more _maintainable_ by
 better code structuring (also by using more modern tools like Roxygen2 and testthat).
 
-This project is still in its infancy, but expect updates in the coming months.
+This project is still in its infancy, but expect updates in the coming time.
