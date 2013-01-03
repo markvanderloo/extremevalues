@@ -27,11 +27,14 @@ SEXP all_finite_double(SEXP x){
 /* An element of x is an outlier when it is 
  * 1. out of the fitrange
  * 2. larger than a predifined limit
- * 3. there are no observarions extending further outward that are not outliers.
+ * 3. all elements beyond the outlier are also outliers.
  * NOTE: x must be sorted in ascending order.
  */
 SEXP isoutlier_direct(SEXP x, SEXP limits, SEXP fitrange ){
    PROTECT(x);
+   PROTECT(limits);
+   PROTECT(fitrange);
+
    double *xx = REAL(x), *lm = REAL(limits), *fr = REAL(fitrange);
    int n = length(x), i;
    SEXP y;
@@ -42,18 +45,58 @@ SEXP isoutlier_direct(SEXP x, SEXP limits, SEXP fitrange ){
    i = 0;
    while ( xx[i] < lm[0] && xx[i] < fr[0] && i < n ){
       yy[i] = 1;
-      i++;
+      ++i;
    }
    // right outliers
    i = n-1;
    while( xx[i] > lm[1] && xx[i] > fr[1] && i > -1 ){
       yy[i] = 1;
-      i--;
+      --i;
    }
 
-   UNPROTECT(2);
+   UNPROTECT(4);
    return y;
 }
+
+/* Locate outliers in x by deviance from their predicted value. An element of
+ * x is an outlier when
+ * 1. its value is outside the range used in fitting the model
+ * 2. its residual is larger than a predetermined limite
+ * 3. all elements beyond the outlier are also outliers.
+ * NOTE: x must be sorted in ascending order
+ */
+SEXP isoutlier_residuals(SEXP x, SEXP fitrange, SEXP residuals, SEXP limits){
+   PROTECT(x);
+   PROTECT(fitrange);
+   PROTECT(residuals);
+   PROTECT(limits);
+
+   double *xx = REAL(x), *res = REAL(residuals);
+   double *fr = REAL(fitrange), *lm = REAL(limits);
+   int n = length(x);
+
+   SEXP y;
+   PROTECT(y=allocVector(LGLSXP,n));
+   int i;
+   int *yy = LOGICAL(y);
+   for ( i=0; i<n; yy[i++] = 0 );
+   // left outliers
+   i = 0;
+   while( xx[i] < fr[0] && res[i] < lm[0] && i < n ){
+      yy[i] = 1;
+      ++i;
+   }
+   // right outliers
+   i = n-1;
+   while( xx[i] > fr[1] && res[i] > lm[1] && i > -1 ){
+      yy[i] = 1;
+      --i;
+   }
+   
+   UNPROTECT(5);
+   return y;
+}
+
 
 
 SEXP R_plotpositions(SEXP x){

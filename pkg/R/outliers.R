@@ -93,7 +93,7 @@ limits.parameters <- function(parameters, x, method=c('direct','residuals'), ...
 }
 
 direct_limits <- function(v, rho=c(0.5,0.5)){
-   p <- rho/parameters$N
+   p <- rho/v$N
    
    c(
       Lmin = do.call(v$qfun,c(list(p[1]),as.list(v$par))), 
@@ -112,11 +112,24 @@ residual_limits <- function(v, x, alpha=c(0.05,0.05)){
 #' @param parameters An object of class \code{parameters} as returned by 
 #'    the \code{\link{parameters}} function.
 #' @param x Vector of observations
+#' @param method which method to use to determine the \code{\link{limits}}
 #' @param ... Arguments passed to \code{limits}
 #' @export
-is.outlier <- function(parameters, x, ...){
-   L <- limits(parameters,...)
-   x < L[1] | x > L[2]
+is.outlier <- function(parameters, x, method=c('direct','residuals'), ...){
+   storage.mode(x) <- 'double'
+   method <- match.arg(method)
+   i <- order(x)
+   j <- order(i)
+   if ( method == 'direct' ){
+      L <- limits(parameters, method='direct', ...)
+      .Call('isoutlier_direct', x[i], L, parameters$range)[j]
+   } else if (method == 'residuals' ){
+      L <- limits(parameters, x, method='residuals', ...)
+      res <- residuals(parameters,x)
+      .Call('isoutlier_residuals', x[i], parameters$range, res[i], L)[j]
+   } else {
+      stop("Unkown method")
+   }
 }
 
 
@@ -128,6 +141,7 @@ is.outlier <- function(parameters, x, ...){
 #' @param y A data vector
 #' @param method The method for limit determination
 #' @param ...  Graphical arguments to be passed to 'plot'
+#' 
 #' @export
 plot.parameters <- function(x, y, method=c('direct','residuals'), ...){
    method <- match.arg(method)
@@ -162,7 +176,8 @@ plot_direct <- function(x,y,rho=c(0.5,0.5),...){
       y = c(L[2]       ,L[2],r,r          ),
       col=color
    )
-   points(yhat,y,xlim=plotrange, ylim=plotrange)
+   i <- is.outlier(x, y, method='direct', rho=rho)
+   points(yhat[i],y[i],pch=8)
    abline(h=L[1],lty=2)
    abline(h=L[2],lty=2)
    abline(v=fitrange[1],lty=2)
@@ -190,7 +205,8 @@ plot_residuals <- function(x,y, alpha=c(0.05,0.05),...){
       y   = c(L[2]      , L[2],u[2],u[2]),
       col = color
    )
-   points(y,r,...)
+   i <- is.outlier(x, y, method='residuals',alpha=alpha)
+   points(y[i],r[i],pch=8)
    abline(h=0)
    abline(h=L[1],lty=2)
    abline(h=L[2],lty=2)
