@@ -1,0 +1,37 @@
+citHeader("To cite extremevalues in publications use:")
+
+citEntry(entry="Manual",
+         title = "extremevalues, an R package for outlier detection in univariate data",
+         author = person(first="M.P.J.", last="van der Loo"),
+         year         = 2010,
+         note         = "R package version 2.0",
+         url          = "http://www.cran.R-project.org, http://www.markvanderloo.eu",
+         
+         textVersion = 
+         paste("M.P.J. van der Loo, ", 
+               "extremevalues, an R package for outlier detection in univariate data,  ",
+               "R package version 2.1 ", sep="")
+         )
+
+citFooter("To cite the underlying theory, please use:")
+citFooter("")
+citFooter("M.P.J. van der Loo, Distribution based outlier detection for univariate data,
+Discussion paper 10003, Statistics Netherlands, The Hague (2010).
+Availabele via www.cbs.nl, or www.markvanderloo.eu")
+citFooter("")
+citFooter("A BibTeX entry for LaTeX users is")
+citFooter("")
+citFooter("  @techreport{loo:2010,")
+citFooter("    title = {Distribution based outlier detection for univariate data},")
+citFooter("    author = {M.P.J. van der Loo},")
+citFooter("    institution={Statistics Netherlands},")
+citFooter("    number={10003},")
+citFooter("    address={The Hague},")
+citFooter("    url={http://www.cbs.nl},")
+citFooter("    year = {2010}")
+citFooter("}")
+
+
+
+
+
