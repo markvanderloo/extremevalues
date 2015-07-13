@@ -1,14 +1,12 @@
 Package: extremevalues
-Description: Detect outliers in one-dimensional data
+Description: Detect outliers in one-dimensional data.
 Version: 2.3.1
-Date: 2009-13-11
+Date: 2015-07-13
 Title: Univariate Outlier Detection
 Author: Mark van der Loo <mark.vanderloo@gmail.com>
 Maintainer: Mark van der Loo <mark.vanderloo@gmail.com>
 Depends: R (>= 2.8.0)
-Imports: gWidgets, gWidgetstcltk
+Imports: gWidgets, gWidgetstcltk, utils, stats, graphics
 License: GPL-2
 URL: http://www.r-project.org, http://www.markvanderloo.eu
 Repository: CRAN
-Date/Publication: 2011-01-03 17:24:59
-Packaged: 2011-01-03 14:59:44 UTC; mark

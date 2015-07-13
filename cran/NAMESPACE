@@ -1,5 +1,5 @@
 #UseDynLib()
-import("gWidgets","gWidgetstcltk")
+import("graphics","stats","utils","gWidgets","gWidgetstcltk")
 export("evGui",
        "invErf",
        "fitExponential", 

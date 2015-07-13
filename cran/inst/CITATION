@@ -5,7 +5,7 @@ citEntry(entry="Manual",
          author = person(first="M.P.J.", last="van der Loo"),
          year         = 2010,
          note         = "R package version 2.0",
-         url          = "http://www.cran.R-project.org, http://www.markvanderloo.eu",
+         url          = "http://www.github.com/markvanderloo/extremevalues",
          
          textVersion = 
          paste("M.P.J. van der Loo, ", 
