@@ -2,15 +2,15 @@ citHeader("To cite extremevalues in publications use:")
 
 citEntry(entry="Manual",
          title = "extremevalues, an R package for outlier detection in univariate data",
-         author = person(first="M.P.J.", last="van der Loo"),
+         author = person(given="Mark", family="van der Loo"),
          year         = 2010,
-         note         = "R package version 2.0",
+         note         = "R package version 2.3",
          url          = "http://www.github.com/markvanderloo/extremevalues",
          
          textVersion = 
          paste("M.P.J. van der Loo, ", 
                "extremevalues, an R package for outlier detection in univariate data,  ",
-               "R package version 2.1 ", sep="")
+               "R package version 2.3 ", sep="")
          )
 
 citFooter("To cite the underlying theory, please use:")
