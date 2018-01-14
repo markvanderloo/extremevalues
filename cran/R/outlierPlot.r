@@ -2,7 +2,7 @@
 outlierPlot <- function(y, L, mode="qq", ...)
 {
    if ( mode=="residual" & L$method != "Method II" )
-      stop("resiudal plot is only available for Method II")
+      stop("residual plot is only available for Method II")
    
    switch(mode,
       qq = qqFitPlot(y, L, ...),
