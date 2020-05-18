@@ -1,0 +1,7 @@
+\documentclass{article}
+\usepackage{pdfpages}
+%\VignetteIndexEntry{Distribution based outlier detection in univariate data}
+
+\begin{document}
+\includepdf[pages=-, fitpaper=true]{201003x10pub.pdf}
+\end{document}
