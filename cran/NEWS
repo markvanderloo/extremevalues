@@ -1,3 +1,7 @@
+version 2.3.3
+- Updated to use gWidgets2 and gWidgets2tcltk, as gWidgets
+  and gWidgetstcltk have been orphaned for a while (thanks to
+  Brian Ripley for reporting)
 
 version 2.3.2
 - Updates to conform to new CRAN policies

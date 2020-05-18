@@ -3,6 +3,7 @@
 # mvdl, 14.05.2010
 # 03.11.2011 : Changed dependency on gWidgets and gWidgetstcltk.
 # NOTE: This gui will be replaced by a more decent one based on gtk.
+# 18.05.2020: Strike that note :-).
 
 evGui <- function(y){
 ## setup
@@ -75,10 +76,12 @@ evGui <- function(y){
    }
 
 ## Widgets
-   win <- gwindow("Outlier detector")
+   won <- gwindow("Outlier detector")
+
+   win <- gvbox(container=won)
 
    modelgp <- gframe("Model parameters",horizontal=FALSE, container=win)
-   
+  
    tbld <- glayout(container=modelgp)
    distribution <- gcombobox(names(distributions),
                      container=tbld,
@@ -98,9 +101,10 @@ evGui <- function(y){
    tblp[1,2] = "Right quantile limit"
    tblp[2,2] = slFRight
 
-# detection parameters
-   frDetect <- gframe("Detection parameters", horizontal=FALSE, container=win)
 
+# detection parameters
+   frDetect <- gframe("Detection parameters", horizontal=FALSE, container=win, expand=TRUE)
+   addSpring(frDetect)
 # method picker
    tbMethod <- glayout(container=frDetect)
    rdMethod <- gcombobox(names(methods),
@@ -143,6 +147,7 @@ evGui <- function(y){
 
 # plot options
    frPlot <- gframe("Plot options", horizontal=TRUE, container=win)
+   addSpring(frPlot)
    tbPlot <- glayout(container=frPlot)
    rdFat <- gcombobox(names(plotFat),
                handler=updatePlot,
@@ -177,6 +182,7 @@ evGui <- function(y){
   
   # the actual button
   frResult <- gframe("Results", container=win)
+  addSpring(frResult)
   btScript <- gbutton("Code",
                       container=frResult,
                       handler=showScript)
