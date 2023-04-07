@@ -1,36 +1,13 @@
-citHeader("To cite extremevalues in publications use:")
 
-citEntry(entry="Manual",
-         title = "extremevalues, an R package for outlier detection in univariate data",
-         author = person(given="Mark", family="van der Loo"),
-         year         = 2010,
-         note         = "R package version 2.3",
-         url          = "http://www.github.com/markvanderloo/extremevalues",
-         
-         textVersion = 
-         paste("M.P.J. van der Loo, ", 
-               "extremevalues, an R package for outlier detection in univariate data,  ",
-               "R package version 2.3 ", sep="")
-         )
-
-citFooter("To cite the underlying theory, please use:")
-citFooter("")
-citFooter("M.P.J. van der Loo, Distribution based outlier detection for univariate data,
-Discussion paper 10003, Statistics Netherlands, The Hague (2010).
-Availabele via www.cbs.nl, or www.markvanderloo.eu")
-citFooter("")
-citFooter("A BibTeX entry for LaTeX users is")
-citFooter("")
-citFooter("  @techreport{loo:2010,")
-citFooter("    title = {Distribution based outlier detection for univariate data},")
-citFooter("    author = {M.P.J. van der Loo},")
-citFooter("    institution={Statistics Netherlands},")
-citFooter("    number={10003},")
-citFooter("    address={The Hague},")
-citFooter("    url={http://www.cbs.nl},")
-citFooter("    year = {2010}")
-citFooter("}")
-
+bibentry(bibtype = "TechReport",
+         title   = "Distribution Based Outlier Detection for Univariate Data",
+         author  = person(given = "Mark", family = "van der Loo"),
+         institution = "Statistics Netherlands",
+         number  = "10003",
+         address = "The Hague",
+         url     = "https://www.cbs.nl/",
+         year    = "2010"
+)
 
 
 

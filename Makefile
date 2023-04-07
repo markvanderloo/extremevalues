@@ -4,7 +4,7 @@ pkg:
 
 check: 
 	rm -f *.tar.gz
-	R CMD build pkg
+	R CMD build cran
 	R CMD check *.tar.gz
 
 cran: 
@@ -13,8 +13,8 @@ cran:
 	R CMD check --as-cran *.tar.gz
 
 install: 
-	rm *.tar.gz
-	R CMD build pkg
+	rm -f *.tar.gz
+	R CMD build cran
 	R CMD INSTALL *.tar.gz
 
 
