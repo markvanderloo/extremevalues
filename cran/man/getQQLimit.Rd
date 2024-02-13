@@ -21,8 +21,6 @@ qqNormalLimit(y, p , iLambda, alpha)
 \arguments{
 \item{y}{Vector of real numbers}
 \item{p}{Corresponding quantile values}
-\item{N}{Index vector, indicating which elements of y should be used in the fit}
-\item{rho}{Confidence values for residual distribution}
 }
 \value{
 \item{limit}{The residual-values corresponding to the confidence values}

@@ -1,6 +1,8 @@
 version 2.3.4
 - fixed issue with CITATION file (thanks to Achim Zeileis
   for noting)
+- fixed documentation issues (thanks to Kurt Hornik for the
+  heads up)
 
 version 2.3.3
 - Updated to use gWidgets2 and gWidgets2tcltk, as gWidgets

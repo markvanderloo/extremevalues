@@ -27,9 +27,9 @@ for plot of fit residuals with indicated outliers (Method II only)}
 \details{
 Outliers are marked with a color or special symbol.  If \bold{mode="qq":}
 observed agains predicted y-values are plotted. Points between vertical lines
-were used in the fit.  If L\$method="Method I", horizontal lines indicate the
+were used in the fit.  If \code{L$method="Method I"}, horizontal lines indicate the
 limits below (above) which observations are outliers.  \bold{mode="residuals"}
-only works when L\$Method="Method II". It generates a residual plot where
+only works when \code{L$Method="Method II"}. It generates a residual plot where
 points between two vertical lines were used in the fit. Horizontal lines
 indicate the computed confidence limits. The outermost points in the gray areas
 are outliers.
