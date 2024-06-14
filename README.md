@@ -1,3 +1,10 @@
+[![CRAN](http://www.r-pkg.org/badges/version/extremevalues)](http://cran.r-project.org/package=extremevalues/)
+[![Downloads](https://cranlogs.r-pkg.org/badges/extremevalues)](http://cran.r-project.org/package=extremevalues/)
+[![status](https://tinyverse.netlify.app/badge/extremevalues)](https://CRAN.R-project.org/package=extremevalues)
+
+
+
+
 extremevalues
 =============
 
