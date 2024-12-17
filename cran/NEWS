@@ -1,3 +1,7 @@
+version 2.4.0
+- Removed 'evGUI' function, since the strong dependency gWidgets2 will
+  be removed from CRAN (Thanks to Kurt Hornik for the notification)
+
 version 2.3.4
 - fixed issue with CITATION file (thanks to Achim Zeileis
   for noting)

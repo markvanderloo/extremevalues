@@ -1,7 +1,6 @@
 #UseDynLib()
-import("graphics","stats","utils","gWidgets2","gWidgets2tcltk")
-export("evGui",
-       "invErf",
+import("graphics","stats","utils")
+export( "invErf",
        "fitExponential", 
        "fitLognormal",
        "fitPareto",
