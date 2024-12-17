@@ -1,8 +1,11 @@
 Package: extremevalues
 Description: Detect outliers in one-dimensional data.
-Version: 2.4.0
+Version: 2.4.1
 Title: Univariate Outlier Detection
-Author: Mark van der Loo <mark.vanderloo@gmail.com>
+Authors@R: c(person("Mark", "van der Loo"
+                   , role   = c("cre","aut")
+                   , email  = "mark.vanderloo@gmail.com"
+                   , comment= c(ORCID="0000-0002-9807-4686")))
 Maintainer: Mark van der Loo <mark.vanderloo@gmail.com>
 Depends: R (>= 2.8.0)
 Imports: utils, stats, graphics
